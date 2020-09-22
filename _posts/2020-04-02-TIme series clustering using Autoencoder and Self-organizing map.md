@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TIme series clustering using Autoencoder and Self-organizing map
+title: Acabo de copiar esto de wikipedia
 published: true
 comments: true
 image: "/img/Clustering.png"
@@ -8,56 +8,50 @@ share-img: "/img/Clustering.png"
 thumbnail: "/img/Clustering.png"
 ---
 
-# Learning better representations for clustering
+# ¿Qué es una silla?
 
-Clustering is a form of unsupervised learning, aims at grouping dataset exhibiting similar characteristics. For example, in finance where customers demonstrating default behavior would often be grouped in a cluster. Another example, given a set of images which consist of dogs, cat, bird when passed through a clustering algorithm should be able to create individual clusters; one each for dog, cat and bird.
+La silla es un mueble que suele tener un respaldo, generalmente cuenta con tres o cuatro apoyos y su finalidad es la de servir de asiento a una persona.1​ Las sillas pueden estar elaboradas con diferentes materiales: madera, hierro, forja, plástico o una combinación de varios de ellos.
 
-One of the ways to achieve a task of clustering, is to represent each observation using a feature vector followed with a standard kmeans algorithm. The task of Kmeans for clustering becomes much more easier if feature vector/n-dimensional representation for each observations are well represented. Reserach article published at ICLR 2019 [1](https://arxiv.org/abs/1806.02199) combines the two; representational learning and clustering using autoencoder and self organizing map.
+Según su diseño, las sillas pueden ser clásicas, rústicas, modernas, de oficina, etc. Las que son anchas, con respaldo algo alto, con brazos y balancín se denominan sillones. Las que también cuentan con brazos pero son estrechas se denominan butacas, como las de comedor o de teatro. Las que son muy cómodas, con brazos y respaldo bajo se denominan poltronas o sofá.
 
-A partial overview of their approach is illustrated in figure below which trains the model in an end to end fashion using weighted sum of four loss components (Loss1, Loss2, Loss3, Loss4)
+<p align="center"> <img src="https://commons.wikimedia.org/wiki/File:Chaise_artisanale_coup%C3%A9e_laissant_voir_son_int%C3%A9rieur,_Passage_du_Chantier,_onzi%C3%A8me_arrondissement_de_Paris,_France_01.jpg" width="950" height="500" /> </p>
 
-<p align="center"> <img src="https://ai-how.github.io/img/AE_loss.png" width="950" height="500" /> </p>
+# Historia de las sillas
+Las representaciones más antiguas de las sillas se encuentran en el arte antiguo egipcio, de Oriente Próximo y en el arte griego clásico.2​ En el siglo VI a.C., los griegos inventaron el Klismos, una silla de patas y respaldo curvos. Estas sillas son omnipresentes en el arte griego de aquella época, en el cual sirven de asiento a todo tipo de personajes.3​
 
-Loss1 and 2 are also known as reconstruction loss corresponding to encoded representation and embedded representation. The authors initialize the embedded representations for a pre-defined number of clusters (K_i). Thus for a given encoded representation its closest embedded representation is identified threby assigning each latent/encoded representation to a cluster (K_i). To enforce the similarity of encoded representation to its assigned embedded representation Loss3 is incorporated. Loss4 ensures that the neighbors of K_i to be closer to encoded representation, this enables embeddings to exhibit self organizing property.
+A principios de la primera dinastía egipcia (aprox. 3185 a 2925 a.C.), la carpintería se desarrolló rápidamente, probablemente gracias a la proliferación de herramientas de cobre. Las viviendas más adineradas comenzaron a ser equipadas de camas, cofres, sillas y taburetes, a veces ornamentadas con elementos de cobre o de marfil. Las patas de los muebles solían estar talladas en forma de patas de animales domésticos.4​ Las viviendas más humildes no poseían ninguna silla, o sólo para la persona más importante de la familia, mientras que las familias moderadamente ricas poseían sillas pintadas como las de gente adinerada, pero de calidad mucho menor.
 
-# Experimental observation
+En la Roma antigua, los cónsules y personalidades importantes disponían de una silla curul, que estaba reservada para ellos y que hacían transportar con ellos en sus viajes. Se trataba de un asiento sin respaldo, en marfil o de marfil incrustado, bastante alto, con las patas curvadas y cruzadas en forma de X.5​
 
-S&P 500 dataset for 500 industries is taken from [2](https://www.kaggle.com/camnugent/sandp500/download). For the purpose of this blog, I took open price data for each industry aggregated at a monthly level available from Feb-13 to Feb-18. Monthly open price movement is first standardized using z-scaler.
+En China, según el sinólogo Donald Holzman, la silla fue introducida a principios de la era cristiana, alrededor del año 175 d.C. El emperador Ling, aficionado a los objetos de procedencia occidental, fue el que inició la moda. Estas sillas eran utilizadas fuera de la casa sin más ceremonia, durante siglos. Se trataba de sillas plegables, el único verdadero asiento utilizado por los chinos (además de los divanes y taburetes) hasta el desarrollo de las sillas de estructura fija entre 750 y 960.6​
 
-Using above defined architecture, the model is trained to minimize the weighted sum of losses (1-4).
+Durante la Edad Media en Europa la gente humilde seguía poseyendo muy pocas sillas, que resultaban demasiado caras para ellos. Es por ello que solían emplear los bancos y taburetes como asiento, o muchos otros objetos domésticos, como los arcones.2​ Durante el Renacimiento, la silla empieza a usarse en las casas más adineradas, pero no fue hasta el siglo XVIII que se convirtió en un mueble popular en Europa. A finales de los años 1880, las sillas se volvieron corrientes en los hogares de los Estados Unidos, en las cuales cada miembro de la familia poseía una silla para sentarse a cenar.
 
-For the purpose of model training the entire length of S&P 500 time series values (aggregated at monthly level) is fed as an input to the encoder (which is MLP network). The loss function behavior is depicted below:
+En los años 1940, debido a la Guerra del Pacífico, se produjo una escasez de caucho natural (que era importado de las Indias neerlandesas y de Malasia) en Europa y en Estados Unidos. Los fabricantes de muebles comienzan entonces a emplear materiales flexibles, como el nylon, el cuero artificial y otros tipos de plásticos (ABS, poliéster, polipropileno, etc), que se generalizan para la fabricación de sillas.7​ Este cambio de materia prima, destinada al principio a responder a la demanda creciente en muebles debido al aumento de población, permitió la producción de sillas de plástico industrial de una gran variedad de formas, texturas y colores.
 
-<p align="center"> <img src="https://ai-how.github.io/img/Train_Loss.png" width="650" height="450" /> </p>
+En 1948, en la exposición Low Cost Furniture Design en el MoMA de Nueva York, el prototipo de la primera silla moldeada en plástico en una sola pieza fue presentada por Edgar Kaufman Jr., Robert Lewis y James Prestini.8​
 
-Now lets look at the time series data falling into the same cluster. For this distance between pair of points falling into same cluster is identified and the pair possesing the minimum distance is picked for illustration purpose.
+En 1973, la crisis del petróleo y el aumento consecuente del precio del crudo marcan el declive del diseño de sillas por los grandes diseñadores.8​ Sin embargo, los muebles de plástico barato se volvieron muy populares.
 
-<p align="center"> <img src="https://ai-how.github.io/img/Cluster tightness.png" width="650" height="350" /> </p>
+# Tipos de sillas
 
-When a pair with maximum distance is picked within the same cluster, the two time series follow the same trend except scale difference.
-
-<p align="center"> <img src="https://ai-how.github.io/img/Pair_Max_Dist.png" width="650" height="350" /> </p>
-
-# Overall clustering performance
-
-Since labels are not present to evaluate how well the time series signals are clustered, a combination of pairwise point distance within the cluster and in between cluster is used. Corresponding to each point its average pairwise distance within its own cluster is derived and average pairwise distance to points falling in each cluster other than its own. This gives an estimate of how far a point is from its own cluster in comparison to each of the remaining cluster individually.
-
-Thus for a point say Point1_1 we end up having three distance measures; one is referred as within obtained by taking average of pairwise point distance in its own cluster (Point1_1, Point2_1), (Point1_1, Point3_1). Remaining two would be estimated by taking average of point1_1 distance to points falling in cluster 2 and 3 individually.
-
-<p align="center"> <img src="https://ai-how.github.io/img/Clustering.png" width="650" height="550" /> </p>
-
-This will be repeated for all the points across all the clusters. In an ideal situation where points are clustered appropriately within distance measure for a point should be less than its distance to other clusters. Thus, we derive a ratio of a point distance to its own cluster (referred here as within) with average of distances to remaining cluster.
-
-The closeness of ratio to zero indicates the better clustering quality. Below we plot the histogram of ratio across all the points.
-
-<p align="center"> <img src="https://ai-how.github.io/img/Ratio_Hist.png" width="650" height="550" /> </p>
-
-In histogram above, there are few points whose ratio is greater than depicting they are not clustered correctly as their distance to its own cluster is higher than remaining cluster. 
-
-# What I really liked ?
-
-The method proposed in this paper [1](https://arxiv.org/abs/1806.02199) offers an end to end approach; right from learning representation to assigning clusters. However a challenge still remains to choose the appropriate cluster counts which could cluster points such that their within distance is always lesser than the average distance to remaining clusters.
-
-The codebase is adapted from the one released by author and is slightly modified to remove the effect of loss occuring due to transition probabilities and only consider losses (L1-L4) defined above. Another direction in which the effectiveness of algorithm could be tested is by replacing MLP at the autoencoder with LSTM to retain the time varying behavior of time series data
-
-Drawings are made using [3](https://sketchboard.io/)
+-Silla de niño. Silla con ruedas para transportar el infante sentado en ella, que suele tener las siguientes características:
+    Respaldo regulable.
+    Cuenta con una bandeja inferior para llevar diferentes objetos (chupete, biberón, ropa de niño, etc.)
+    Suele ser plegable, operación que se realiza con facilidad para introducirla en el vehículo o guardarla.
+    Algunos modelos tienen freno de pie para inmovilizarla.
+    Algunos modelos incorporan capota regulable para proteger al niño del sol, la lluvia, el viento o el frío.
+    Se les puede poner una funda acolchada en la que el niño introduce los pies.
+    Se les puede añadir un impermeable ajustable para proteger al infante de la lluvia.
+-Silla de coche. Silla para transportar niños dentro de los coches. Tienen que estar normalizadas según la legislación de cada país. Se fijan por medio del cinturón de seguridad y pueden disponerse de frente o de espalda a la marcha según el modelo y la edad del bebé.
+-Silla de la reina. Asiento improvisado que se forma entrelazando los brazos de dos personas y que se usa en determinados juegos infantiles.
+-Silla plegable. Silla generalmente de madera que se pliega ocupando muy poco espacio. Se utiliza para ocasiones especiales como celebraciones, ferias, eventos deportivos, desfiles, etc.
+-Silla de tijera. Silla plegable con asiento y respaldo de tela y patas en aspa.
+-Silla de pala. Silla con un solo brazo en el que hay una superficie horizontal a modo de apoyo para escribir. Se suelen utilizar mucho en academias de enseñanza. Las hay con pala a la derecha, para diestros, y pala a la izquierda, para zurdos.
+-Silla de ruedas. Silla móvil destinada a ser empujada por detrás o a ser accionada por su usuario apoyando con las manos sobre las ruedas, o por un sistema eléctrico. Es usada generalmente por personas de movilidad reducida, o para desplazar pacientes en los hospitales.
+-Silla de oficina. Silla que se utiliza en los despachos. Suele tener un asiento regulable en altura y un respaldo reclinable para adaptarla a las características de la columna de cada persona.
+-Silla de masaje. Silla ergonómica destinada para tal fin.
+-Silla de parto o sillón obstétrico apto para el parto. Instrumento que se utiliza para facilitar el parto, en el cual la mujer parturienta se coloca sentada. Existen referencias de este tipo de sillas en la antigüedad egipcia, griega y romana.9
+-Trona. Silla de asiento elevado con una repisa frontal en la que se sientan los niños para que puedan comer y evitar que puedan caerse.
+-Sillón mecedora. Silla típica de madera, con un borde curvado en la parte inferior que permite que se mueva adelante y atrás. Es muy común en las islas caribeñas y su uso común, además de para personas mayores, es para mecer bebés.
+-Silla de instrumentos, también conocida como silla de Batería. Se trata de una silla en forma de taburete con un asiento en forma de cilindro, generalmente sin brazos ni respaldo, con patas diagonales.
