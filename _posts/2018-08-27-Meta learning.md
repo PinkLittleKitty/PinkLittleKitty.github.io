@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning to learn; model agnostic meta learning approach 
-published: true
+published: false
 comments: true
 image: "/img/MAML.jpg"
 share-img: "/img/MAML.jpg"
