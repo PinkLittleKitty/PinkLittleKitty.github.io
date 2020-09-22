@@ -3,9 +3,6 @@ layout: post
 title: Acabo de copiar esto de wikipedia
 published: true
 comments: true
-image: "/img/Clustering.png"
-share-img: "/img/Clustering.png"
-thumbnail: "/img/Clustering.png"
 ---
 
 # ¿Qué es una silla?
