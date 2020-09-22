@@ -14,8 +14,6 @@ La silla es un mueble que suele tener un respaldo, generalmente cuenta con tres 
 
 Según su diseño, las sillas pueden ser clásicas, rústicas, modernas, de oficina, etc. Las que son anchas, con respaldo algo alto, con brazos y balancín se denominan sillones. Las que también cuentan con brazos pero son estrechas se denominan butacas, como las de comedor o de teatro. Las que son muy cómodas, con brazos y respaldo bajo se denominan poltronas o sofá.
 
-<p align="center"> <img src="https://commons.wikimedia.org/wiki/File:Chaise_artisanale_coup%C3%A9e_laissant_voir_son_int%C3%A9rieur,_Passage_du_Chantier,_onzi%C3%A8me_arrondissement_de_Paris,_France_01.jpg" width="950" height="500" /> </p>
-
 # Historia de las sillas
 Las representaciones más antiguas de las sillas se encuentran en el arte antiguo egipcio, de Oriente Próximo y en el arte griego clásico.2​ En el siglo VI a.C., los griegos inventaron el Klismos, una silla de patas y respaldo curvos. Estas sillas son omnipresentes en el arte griego de aquella época, en el cual sirven de asiento a todo tipo de personajes.3​
 
