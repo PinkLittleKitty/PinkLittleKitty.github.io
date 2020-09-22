@@ -1,7 +1,7 @@
 ---
 layout: post
 title: From Supervised learning to semi-supervised and unsupervised approach 
-published: true
+published: false
 comments: true
 ---
 ## Brief to Generative and Discriminative models
