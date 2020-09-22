@@ -38,15 +38,27 @@ En 1973, la crisis del petróleo y el aumento consecuente del precio del crudo m
     Algunos modelos incorporan capota regulable para proteger al niño del sol, la lluvia, el viento o el frío.
     Se les puede poner una funda acolchada en la que el niño introduce los pies.
     Se les puede añadir un impermeable ajustable para proteger al infante de la lluvia.
+    
 -Silla de coche. Silla para transportar niños dentro de los coches. Tienen que estar normalizadas según la legislación de cada país. Se fijan por medio del cinturón de seguridad y pueden disponerse de frente o de espalda a la marcha según el modelo y la edad del bebé.
+
 -Silla de la reina. Asiento improvisado que se forma entrelazando los brazos de dos personas y que se usa en determinados juegos infantiles.
+
 -Silla plegable. Silla generalmente de madera que se pliega ocupando muy poco espacio. Se utiliza para ocasiones especiales como celebraciones, ferias, eventos deportivos, desfiles, etc.
+
 -Silla de tijera. Silla plegable con asiento y respaldo de tela y patas en aspa.
+
 -Silla de pala. Silla con un solo brazo en el que hay una superficie horizontal a modo de apoyo para escribir. Se suelen utilizar mucho en academias de enseñanza. Las hay con pala a la derecha, para diestros, y pala a la izquierda, para zurdos.
+
 -Silla de ruedas. Silla móvil destinada a ser empujada por detrás o a ser accionada por su usuario apoyando con las manos sobre las ruedas, o por un sistema eléctrico. Es usada generalmente por personas de movilidad reducida, o para desplazar pacientes en los hospitales.
+
 -Silla de oficina. Silla que se utiliza en los despachos. Suele tener un asiento regulable en altura y un respaldo reclinable para adaptarla a las características de la columna de cada persona.
+
 -Silla de masaje. Silla ergonómica destinada para tal fin.
--Silla de parto o sillón obstétrico apto para el parto. Instrumento que se utiliza para facilitar el parto, en el cual la mujer parturienta se coloca sentada. Existen referencias de este tipo de sillas en la antigüedad egipcia, griega y romana.9
+
+-Silla de parto o sillón obstétrico apto para el parto. Instrumento que se utiliza para facilitar el parto, en el cual la mujer parturienta se coloca sentada. Existen referencias de este tipo de sillas en la antigüedad egipcia, griega y romana.
+
 -Trona. Silla de asiento elevado con una repisa frontal en la que se sientan los niños para que puedan comer y evitar que puedan caerse.
+
 -Sillón mecedora. Silla típica de madera, con un borde curvado en la parte inferior que permite que se mueva adelante y atrás. Es muy común en las islas caribeñas y su uso común, además de para personas mayores, es para mecer bebés.
+
 -Silla de instrumentos, también conocida como silla de Batería. Se trata de una silla en forma de taburete con un asiento en forma de cilindro, generalmente sin brazos ni respaldo, con patas diagonales.
