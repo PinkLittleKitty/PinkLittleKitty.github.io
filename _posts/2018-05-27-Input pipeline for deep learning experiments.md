@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Input pipeline for deep learning experiments in Keras, Tensorflow and Pytorch 
-published: true
+published: false
 comments: true
 ---
 # Why input data pipeline needs to be optimal ?
