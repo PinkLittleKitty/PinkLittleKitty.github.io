@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Catch up with AI
-subtitle: An effort to bring AI into practice for all
+title: Los unicornios no vuelan.
+subtitle: Lamento el arruinarte los sueños, bro.
 use-site-title: true
 ---
 
@@ -19,7 +19,7 @@ use-site-title: true
     </a>
 
     <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+      Subido en la {{ post.date | fecha: "%B %-d, %Y" }}
     </p>
 
     <div class="post-entry-container">
@@ -34,7 +34,7 @@ use-site-title: true
         {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
         {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Leer&nbsp;Más]</a>
         {% endif %}
       </div>
     </div>
