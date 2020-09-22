@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Checkpointing and evaluating trained model in Tensorflow 
-published: true
+published: false
 comments: true
 ---
 ## Brief on why model checkpointing is even needed?
