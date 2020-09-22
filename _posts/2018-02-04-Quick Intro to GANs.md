@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Understanding GANs; analyzing Generator and Discriminator losses 
-published: true
+published: false
 comments: true
 ---
 
