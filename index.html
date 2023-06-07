@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santiago Fisela | Linktree</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://avatars.githubusercontent.com/PinkLittleKitty" type="image/x-icon" />
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Core theme CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ==" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="hideScroll">
+    <div class="cursor">
+      <div class="text">JustNeki</div>
+      <div class="text">JustNeki</div>
+      <div class="text">JustNeki</div>
+      <div class="text">JustNeki</div>
+      <div class="text"><span>JustNeki</span></div>
+  </div>
+  <script>
+       document.addEventListener("mousemove", e => {
+           gsap.to(".text", {
+               x: e.clientX,
+               y: e.clientY,
+               stagger: -0.02
+           });
+       });       
+  </script>
+
+    <!-- Animación de fondo parallax -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- Fin de la animación de fondo parallax -->
+
+    <a id="profilePicture" href="#popup">
+      <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
+    </a>
+
+    <div class="overlay" id="popup">
+      <div class="popup">
+        <div class="popup-photo">
+          <a href="https://avatars.githubusercontent.com/PinkLittleKitty" target="_blank">
+            <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
+          </a>
+        </div>
+        <div class="popup-quote">
+          Comedy = Tragedy + Time.
+        </div>
+        <a class="popup-close" onclick="history.back()">&times;</a>
+      </div>
+    </div>
+
+    <div id="userName">
+      JustNeki
+    </div>
+
+    <div id="links">
+      <a class="link" href="https://github.com/PinkLittleKitty" target="_blank">
+        <i class="fab fa-github">&nbsp;</i>Github
+      </a>
+      <a class="link" href="https://pinklittlekitty.github.io/Portafolio" target="_blank">
+        <i class="fa fa-paperclip">&nbsp;</i>Portafolio
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/santiago-fisela/" target="_blank">
+        <i class="fa fa-linkedin">&nbsp;</i>LinkedIn
+      </a>
+      <a class="link" href="https://www.youtube.com/@justneki" target="_blank">
+        <i class="fab fa-youtube">&nbsp;</i>Youtube
+      </a>
+      <a class="link" href="https://www.twitch.tv/justneki" target="_blank">
+        <i class="fab fa-twitch">&nbsp;</i>Twitch
+      </a>
+      <a class="link" href="https://play.google.com/store/apps/details?id=com.HematoxiCo.KTA&hl=es" target="_blank">
+        <i class="fab fa-google-play">&nbsp;</i>KTA
+      </a>
+      <a class="link" href="https://farteamdev.blogspot.com/" target="_blank">
+        <i class="fab fa-wordpress">&nbsp;</i>Farm Game Dev
+      </a>
+      <a class="link" onclick="copyToClipboard('santyfisela@gmail.com', 'email', 'fa fa-envelope', ' E-mail')" 
+      id="email">
+      <i class="fa fa-envelope">&nbsp;</i>E-mail
+    </a>
+    </div>
+    
+    <script  src="linksScripts.js"></script>
+    
+  </body>
+  <footer>
+  <p class="footerText">© Santiago Fisela 2023</p>
+
+</footer>
+</html>
