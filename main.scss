@@ -8,6 +8,7 @@
     transition-timing-function: ease-out;
     animation: cursorAnim .5s infinite alternate;
     pointer-events: none;
+    cursor: none;
 }
 
 .cursor::after {
