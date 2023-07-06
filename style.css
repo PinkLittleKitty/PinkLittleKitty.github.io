@@ -35,7 +35,8 @@ body {
     position: relative;
     width: 96px;
     height: 96px;
-    display: block;
+    display: flex;
+    justify-content: center;
     margin: 40px auto 20px;
     border-radius: 50%;
     -webkit-tap-highlight-color: transparent;
@@ -347,9 +348,99 @@ body {
     color: var(--bgColor);
 }
 
+section.type-pong {
+  width: 400px;
+  height: 200px;
+  background: #111;
+  color: #eee;
+  margin: auto;
+  position: relative;
+  outline: solid 4px white;
+}
+
+section .divider {
+  position: absolute;
+  height: 200px;
+  left: 199.5px;
+  border: dashed 1px
+}
+
+section .ball {
+  position: absolute;
+  color: var(--accentColor);
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.25;
+  display: block;
+  font-family: var(--font);
+  width: 6px;
+  height: 6px;
+  top: 0px;
+  left: 60px;
+  animation: move-ball 6s infinite linear;
+}
+
+@keyframes move-ball {
+  5% {
+    top: 50px;
+    left: 24px;
+  }
+  20% {
+    top: 185px;
+    left: 140px;
+  }
+  45% {
+    top: 0;
+    left: 260px;
+  }
+  55% {
+    top: 50px;
+    left: 315px;
+  }
+  80% {
+    top: 185px;
+    left: 160px;
+  }
+  100% {
+    top: 0px;
+    left: 60px;
+  }
+}
+
+section .racket {
+  position: absolute;
+  background: #eee;
+  width: 4px;
+  height: 30px;
+  top: 85px;
+}
+
+section .racket.left {
+  top: 50px;
+  left: 20px;
+  animation: racket-left 6s infinite linear;
+}
+
+@keyframes racket-left {
+  5% { top: 40px; }
+  50% { top: 125px; }
+  100% { top: 50px; }
+}
+
+section .racket.right {
+  left: 380px;
+  animation: racket-right 6s infinite linear;
+}
+
+@keyframes racket-right {
+  15% { top: 110px; }
+  55% { top: 35px; }
+  100% { top: 85px; }
+}
 
 /*-----------------------parallax-----------------------*/
 /* creditos: https://www.youtube.com/watch?v=aywzn9cf-_U */
+
 #stars1 {
     width: 1px;
     height: 1px;
