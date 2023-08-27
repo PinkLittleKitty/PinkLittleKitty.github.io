@@ -149,6 +149,13 @@ body {
   .icon i {
     font-weight: normal;
   }
+
+.writingText {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
   
   .u-name {
     visibility: hidden;
