@@ -203,20 +203,46 @@ class Asteroid {
 }
 function initAsteroids() {
     const canvas = document.getElementById('asteroidsCanvas');
-    // Set a fixed aspect ratio (16:9)
-    const aspectRatio = 16/9;
-    const maxWidth = window.innerWidth;
-    const maxHeight = window.innerHeight;
+    const ctx = canvas.getContext('2d');
     
-    if (maxWidth / maxHeight > aspectRatio) {
-        canvas.width = maxHeight * aspectRatio;
-        canvas.height = maxHeight;
-    } else {
-        canvas.width = maxWidth;
-        canvas.height = maxWidth / aspectRatio;
+    // Enable crisp rendering
+    ctx.imageSmoothingEnabled = false;
+    
+    function resizeCanvas() {
+        const dpr = window.devicePixelRatio || 1;
+        
+        // Full viewport height without any margins
+        const height = document.documentElement.clientHeight;
+        // Calculate width based on aspect ratio while maintaining height
+        const width = Math.min(document.documentElement.clientWidth, height * (16/9));
+        
+        // Set canvas size in pixels
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        
+        // Set display size
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        
+        // Scale context to match device pixel ratio
+        ctx.scale(dpr, dpr);
+        ctx.imageSmoothingEnabled = false;
     }
     
-    const ctx = canvas.getContext('2d');
+    // Add CSS to center the canvas
+    canvas.style.display = 'block';
+    canvas.style.margin = 'auto';
+    canvas.style.position = 'absolute';
+    canvas.style.top = '50%';
+    canvas.style.left = '50%';
+    canvas.style.transform = 'translate(-50%, -50%)';
+    
+    // Initial resize
+    resizeCanvas();
+    
+    // Replace existing resize listener
+    window.addEventListener('resize', resizeCanvas);
+    
     let asteroids = Array(10).fill().map(() => new Asteroid(canvas));
     const spaceship = new Spaceship(canvas);
     let bullets = [];
@@ -274,18 +300,5 @@ function initAsteroids() {
     }
 
     animate();
-
-    window.addEventListener('resize', () => {
-        const maxWidth = window.innerWidth;
-        const maxHeight = window.innerHeight;
-        
-        if (maxWidth / maxHeight > aspectRatio) {
-            canvas.width = maxHeight * aspectRatio;
-            canvas.height = maxHeight;
-        } else {
-            canvas.width = maxWidth;
-            canvas.height = maxWidth / aspectRatio;
-        }
-    });
 }
 document.addEventListener('DOMContentLoaded', initAsteroids);
