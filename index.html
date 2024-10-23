@@ -59,6 +59,7 @@
 
   <body class="hideScroll">
     <!-- Animación de fondo parallax -->
+    <canvas id="asteroidsCanvas"></canvas>
     <section class="animated-background">
       <div id="stars1"></div>
       <div id="stars2"></div>
@@ -66,14 +67,18 @@
     </section>
     <!-- Fin de la animación de fondo parallax -->
 
-    <section class="type-pong">
-        <div class="racket left"></div>
-        <div class="racket right"></div>
-        <div class="ball">JustNeki</div>
-        <div class="divider"></div>
-        <a id="profilePicture" href="#popup">
-          <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
-        </a>
+    <section class="type-pong" id="pongGame" onclick="startPongGame()">
+      <div class="score">
+        <span id="playerScore">0</span>
+        <span id="aiScore">0</span>
+      </div>
+      <div class="racket left" id="playerPaddle"></div>
+      <div class="racket right" id="aiPaddle"></div>
+      <div class="ball" id="pongBall">JustNeki</div>
+      <div class="divider"></div>
+      <a id="profilePicture" href="#popup">
+        <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
+      </a>
   </section>
 
     <div class="overlay" id="popup">
@@ -184,6 +189,8 @@
     <div class="cursor"></div>
     
     <script  src="linksScripts.js"></script>
+    <script src="pong.js"></script>
+    <script src="asteroids.js"></script>
   </body>
   <footer>
   <p class="footerText">© Santiago Fisela 2024</p>

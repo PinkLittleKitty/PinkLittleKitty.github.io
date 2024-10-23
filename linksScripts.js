@@ -1,4 +1,4 @@
-<!--Script por Ulises Alvarenga https://github.com/Ulysses-Alv -->
+// Script original por Ulises Alvarenga https://github.com/Ulysses-Alv
 
 function copyToClipboard(text, elementId, classes, textNode) {
   const el = document.createElement('textarea');
