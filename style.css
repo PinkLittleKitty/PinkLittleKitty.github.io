@@ -16,7 +16,6 @@ html, body {
     font-family: var(--font);
     background: radial-gradient(ellipse at bottom, var(--bgColor) 0%, var(--bgColor2) 100%);
     opacity: 0;
-    cursor: none;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: none;
@@ -126,7 +125,6 @@ html, body {
     padding: 10px;
     border: 5px white solid;
     font-size: large;
-    cursor: none;
     
     background: linear-gradient(to right, white 50%, transparent 50%);
     background-size: 200% 101%;
