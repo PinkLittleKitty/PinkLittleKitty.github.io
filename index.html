@@ -175,7 +175,10 @@
     <script src="asteroids.js"></script>
   </body>
   <footer>
-  <p class="footerText">© Santiago Fisela 2025</p>
+  <p class="footerText">© Santiago Fisela <span id="footerYear">2025</span></p>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
 
 </footer>
 </html>

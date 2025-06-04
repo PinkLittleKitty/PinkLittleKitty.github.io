@@ -24,6 +24,131 @@
     <link rel="stylesheet" href="main.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ==" crossorigin="anonymous"></script>
+    <style>
+      .collapsible-trigger {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px; 
+        border: 5px white solid;
+        background: linear-gradient(to right, white 50%, transparent 50%);
+        background-size: 200% 101%;
+        background-position: right top;
+        transition-property: color, background-position, filter;
+        transition-duration: .25s;
+        transition-timing-function: ease-in-out;
+        box-sizing: border-box;
+        color: white;
+        border-radius: 0;
+        margin-bottom: 10px;
+        position: relative;
+        justify-content: center;
+      }
+
+      .collapsible-trigger .section-logo {
+        height: 2em;
+        max-width: 500px;
+        flex-shrink: 0;
+      }
+
+      .collapsible-trigger .trigger-text {
+        margin-right: 0.5em;
+        white-space: nowrap;
+      }
+
+      .collapsible-trigger .icon-toggle {
+        margin-left: auto;
+        margin-right: 0.5em;
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        font-size: 1em;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .collapsible-trigger .icon-toggle .fas {
+        transition: transform 0.2s ease-out;
+      }
+
+      .collapsible-trigger[aria-expanded="true"] .icon-toggle .fas {
+        transform: rotate(180deg);
+      }
+
+      .collapsible-trigger hr {
+        flex-grow: 1;
+        min-width: 10px;
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        margin: 0 0.5em;
+      }
+
+      .collapsible-content {
+        display: none;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 1.5em;
+      }
+      .collapsible-content.open {
+        display: block;
+      }
+      .collapsible-content > a {
+        display: block;
+        padding: 12px 15px;
+        padding: 10px;
+        border: 5px white solid;
+        background: linear-gradient(to right, white 50%, transparent 50%); 
+        background-size: 200% 101%;
+        background-position: right top;
+        transition-property: color, background-position, filter;
+        transition-duration: .25s;
+        transition-timing-function: ease-in-out;
+        box-sizing: border-box;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 0;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .collapsible-content > a:hover {
+        background-position: left top;
+        color: black !important;
+        filter: drop-shadow(0px 0px 5px black);
+      }
+
+      .collapsible-content > a:last-child {
+        margin-bottom: 0; 
+      }
+      .collapsible-content > a .icon {
+        display: inline;
+        float: left;
+        margin-right: 10px;
+      }
+      .collapsible-content > a .icon i {
+        font-weight: normal;
+      }
+      .collapsible-content > a .u-name {
+        visibility: hidden;
+        display: none;
+        opacity: 50%;
+      }
+      .collapsible-content > a:hover .u-name {
+        display: initial;
+        visibility: visible;
+      }
+
+      .collapsible-section {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    </style>
   </head>
 
   <body class="hideScroll">
@@ -118,6 +243,46 @@
         Asteroids
         <span class="u-name">@PinkLittleKitty</span>
       </a>
+      <!-- F.a.R Team Collapsible Section -->
+      <div class="collapsible-section">
+        <h3 class="collapsible-trigger" aria-expanded="false" aria-controls="far-team-links-content">
+          <img src="assets/far-logo.png" alt="F.a.R Team Logo" class="section-logo">
+          <span class="icon-toggle"><i class="fas fa-chevron-down"></i></span>
+        </h3>
+        <div id="far-team-links-content" class="collapsible-content">
+          <a href="https://farteam.digital/" target="_blank">
+            <div class="icon"><i class="fa fa-code"></i></div>
+            F.a.R Team's Website
+            <span class="u-name">@PinkLittleKitty</span>
+          </a>
+          <a href="https://blog.farteam.digital/" target="_blank">
+            <div class="icon"><i class="fa fa-code"></i></div>
+            Devlog
+            <span class="u-name">@PinkLittleKitty</span>
+          </a>
+          <a href="https://farteam.digital/devtools" target="_blank">
+            <div class="icon"><i class="fa fa-code"></i></div>
+            Devtools (Internal)
+            <span class="u-name">@PinkLittleKitty</span>
+          </a>
+          <a href="https://farteam.digital/FarmoxelBuilds" target="_blank">
+            <div class="icon"><i class="fa fa-code"></i></div>
+            Farmoxel Builds (Internal)
+            <span class="u-name">@PinkLittleKitty</span>
+          </a>
+          <a href="https://farteam.digital/bug-report/" target="_blank">
+            <div class="icon"><i class="fa fa-code"></i></div>
+            Bug Report
+            <span class="u-name">@PinkLittleKitty</span>
+          </a>
+          <a href="https://farteam.digital/connect" target="_blank">
+            <div class="icon"><i class="fa fa-code"></i></div>
+            Connect with us!
+            <span class="u-name">@PinkLittleKitty</span>
+          </a>
+        </div>
+      </div>
+      <!-- End F.a.R Team Collapsible Section -->
     <h3>//&nbsp;Misc
         <hr />
       </h3>
@@ -147,10 +312,29 @@
     </section>
     
     <script  src="linksScripts.js"></script>
-  
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const farTeamTrigger = document.querySelector('.collapsible-trigger[aria-controls="far-team-links-content"]');
+        
+        if (farTeamTrigger) {
+          const contentToToggle = document.getElementById(farTeamTrigger.getAttribute('aria-controls'));
+
+          if (contentToToggle) {
+            farTeamTrigger.addEventListener('click', () => {
+              const isExpanded = farTeamTrigger.getAttribute('aria-expanded') === 'true' || false;
+              farTeamTrigger.setAttribute('aria-expanded', !isExpanded);
+              contentToToggle.classList.toggle('open');
+            });
+          }
+        }
+      });
+    </script>
   </body>
   <footer>
-  <p class="footerText">© Santiago Fisela 2023</p>
+  <p class="footerText">© Santiago Fisela <span id="footerYear">2025</span></p>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
 
 </footer>
 </html>
