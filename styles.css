@@ -398,8 +398,8 @@ section .racket.right {
     display: flex;
     align-items: center;
     padding: var(--space-md) var(--space-lg);
-    background: var(--secondary-bg);
-    border: 1px solid var(--border-color);
+    background: transparent;
+    border: 2px solid var(--border-color);
     border-radius: var(--border-radius);
     color: var(--primary-text);
     text-decoration: none;
@@ -425,8 +425,7 @@ section .racket.right {
 }
 
 .links a:hover {
-    background: var(--hover-bg);
-    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -681,40 +680,103 @@ body {
     background: linear-gradient(135deg, var(--hover-bg), rgba(139, 92, 246, 0.05));
 }
 
+.links a[href*="github"] {
+    border-color: #f97316;
+}
 .links a[href*="github"] .icon {
     color: #f97316;
 }
+.links a[href*="github"]:hover {
+    background: rgba(249, 115, 22, 0.1);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
 
+.links a[href*="linkedin"] {
+    border-color: #0ea5e9;
+}
 .links a[href*="linkedin"] .icon {
     color: #0ea5e9;
 }
+.links a[href*="linkedin"]:hover {
+    background: rgba(14, 165, 233, 0.1);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
 
+.links a[href*="youtube"] {
+    border-color: #ef4444;
+}
 .links a[href*="youtube"] .icon {
     color: #ef4444;
 }
+.links a[href*="youtube"]:hover {
+    background: rgba(239, 68, 68, 0.1);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
 
+.links a[href*="twitch"] {
+    border-color: #8b5cf6;
+}
 .links a[href*="twitch"] .icon {
     color: #8b5cf6;
 }
+.links a[href*="twitch"]:hover {
+    background: rgba(139, 92, 246, 0.1);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
 
+.links a[href*="discord"] {
+    border-color: #6366f1;
+}
 .links a[href*="discord"] .icon {
     color: #6366f1;
 }
+.links a[href*="discord"]:hover {
+    background: rgba(99, 102, 241, 0.1);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
 
+.links a[href*="sketchfab"] {
+    border-color: #06b6d4;
+}
 .links a[href*="sketchfab"] .icon {
     color: #06b6d4;
 }
+.links a[href*="sketchfab"]:hover {
+    background: rgba(6, 182, 212, 0.1);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
 
+.links a[href*="play.google"] {
+    border-color: #22c55e;
+}
 .links a[href*="play.google"] .icon {
     color: #22c55e;
 }
+.links a[href*="play.google"]:hover {
+    background: rgba(34, 197, 94, 0.1);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
 
+.links a[href*="resume"] {
+    border-color: #f59e0b;
+}
 .links a[href*="resume"] .icon {
     color: #f59e0b;
 }
+.links a[href*="resume"]:hover {
+    background: rgba(245, 158, 11, 0.1);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
 
+.links a[onclick*="copyToClipboard"] {
+    border-color: #ec4899;
+}
 .links a[onclick*="copyToClipboard"] .icon {
     color: #ec4899;
+}
+.links a[onclick*="copyToClipboard"]:hover {
+    background: rgba(236, 72, 153, 0.1);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
 }
 
 @keyframes animStar {
