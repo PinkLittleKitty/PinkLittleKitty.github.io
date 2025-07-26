@@ -232,10 +232,10 @@
       profilePicture.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        
+
         window.location.hash = '#popup';
         popup.setAttribute('aria-hidden', 'false');
-        
+
         setTimeout(() => {
           const closeButton = popup.querySelector('.popup-close');
           if (closeButton) closeButton.focus();
@@ -255,17 +255,17 @@
           popup.setAttribute('aria-hidden', 'true');
         }
       });
-      
-      window.closePopup = function() {
+
+      window.closePopup = function () {
         window.location.hash = '';
         popup.setAttribute('aria-hidden', 'true');
         profilePicture.focus();
       };
-      
+
       setTimeout(() => {
         const pongGame = document.getElementById('pongGame');
         if (pongGame) {
-          pongGame.addEventListener('click', function(e) {
+          pongGame.addEventListener('click', function (e) {
             if (!profilePicture.contains(e.target) && e.target !== profilePicture) {
               if (typeof window.startPongGame === 'function') {
                 window.startPongGame();

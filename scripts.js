@@ -348,51 +348,194 @@ function addRecruiterEasterEgg() {
         }
 
         if (konamiCode.join(',') === konamiSequence.join(',')) {
-            const message = document.createElement('div');
-            message.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: var(--secondary-bg);
-                border: 2px solid var(--accent-color);
-                border-radius: 12px;
-                padding: 2rem;
-                text-align: center;
-                z-index: 10000;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-                max-width: 400px;
-            `;
-
-            message.innerHTML = `
-                <h3 style="color: var(--accent-color); margin-bottom: 1rem;">🎉 Easter Egg!</h3>
-                <p style="color: var(--primary-text); margin-bottom: 1rem;">
-                    You found the secret! This shows attention to detail and curiosity - 
-                    exactly what I bring to development projects.
-                </p>
-                <button onclick="this.parentNode.remove()" style="
-                    background: var(--accent-color);
-                    color: white;
-                    border: none;
-                    padding: 8px 16px;
-                    border-radius: 6px;
-                    margin-top: 1rem;
-                    cursor: pointer;
-                    font-weight: 500;
-                ">Awesome.</button>
-            `;
-
-            document.body.appendChild(message);
-
-            setTimeout(() => {
-                if (message.parentNode) {
-                    message.remove();
-                }
-            }, 10000);
-
+            startRetroBootSequence();
             konamiCode = [];
         }
     });
+}
+
+function startRetroBootSequence() {
+    const overlay = document.createElement('div');
+    overlay.id = 'retro-overlay';
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        color: #00ff00;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        z-index: 10000;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+    `;
+
+    const terminal = document.createElement('div');
+    terminal.style.cssText = `
+        white-space: pre-wrap;
+        line-height: 1.4;
+    `;
+
+    overlay.appendChild(terminal);
+    document.body.appendChild(overlay);
+
+    const bootMessages = [
+        'SFPDC SYSTEM v2.1.4',
+        'Copyright (C) 2025 JustNeki Software',
+        '',
+        'Initializing PDC modules...',
+        'Loading skills database................ [OK]',
+        'Checking project repositories......... [OK]',
+        'Validating contact information........ [OK]',
+        'Scanning for easter eggs.............. [FOUND]',
+        'Initializing language support......... [OK]',
+        'Loading professional experience....... [OK]',
+        '',
+        'System ready. Launching PDC stats...',
+        ''
+    ];
+
+    let messageIndex = 0;
+    let charIndex = 0;
+
+    function typeMessage() {
+        if (messageIndex < bootMessages.length) {
+            const currentMessage = bootMessages[messageIndex];
+
+            if (charIndex < currentMessage.length) {
+                terminal.textContent += currentMessage[charIndex];
+                charIndex++;
+                setTimeout(typeMessage, Math.random() * 50 + 20);
+            } else {
+                terminal.textContent += '\n';
+                messageIndex++;
+                charIndex = 0;
+                setTimeout(typeMessage, Math.random() * 200 + 100);
+            }
+        } else {
+            setTimeout(() => showPortfolioStats(overlay), 1000);
+        }
+    }
+
+    typeMessage();
+}
+
+function showPortfolioStats(overlay) {
+    const visitTime = new Date();
+    const portfolioAge = Math.floor((visitTime - new Date('2024-01-01')) / (1000 * 60 * 60 * 24));
+    const skills = document.querySelectorAll('.skill-badge, .skill-item').length || 12;
+    const projects = document.querySelectorAll('.project-card, .project-item').length || 6;
+
+    overlay.innerHTML = `
+        <div style="
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+        ">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #00ff00; margin: 0; font-size: 24px;">
+                    ╔══════════════════════════════════════╗
+                    ║        PDC STATS v2.1.4              ║
+                    ╚══════════════════════════════════════╝
+                </h1>
+            </div>
+            
+            <div style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                flex: 1;
+            ">
+                <div style="border: 1px solid #00ff00; padding: 15px; background: rgba(0, 255, 0, 0.05);">
+                    <h3 style="margin-top: 0; color: #00ff00;">SYSTEM INFO</h3>
+                    <div>Developer: Santiago Fisela</div>
+                    <div>Status: Available for hire</div>
+                    <div>Uptime: ${portfolioAge} days</div>
+                    <div>Last Update: ${visitTime.toLocaleDateString()}</div>
+                    <div>Version: 2.1.4-stable</div>
+                </div>
+                
+                <div style="border: 1px solid #00ff00; padding: 15px; background: rgba(0, 255, 0, 0.05);">
+                    <h3 style="margin-top: 0; color: #00ff00;">METRICS</h3>
+                    <div>Skills Loaded: ${skills}</div>
+                    <div>Projects Deployed: ${projects}</div>
+                    <div>Languages: 2 (EN/ES)</div>
+                    <div>Easter Eggs Found: 1/3</div>
+                </div>
+                
+                <div style="border: 1px solid #00ff00; padding: 15px; background: rgba(0, 255, 0, 0.05);">
+                    <h3 style="margin-top: 0; color: #00ff00;">CONTACT PROTOCOLS</h3>
+                    <div>Email: contacto@justneki.com</div>
+                    <div>LinkedIn: /in/santiago-fisela</div>
+                    <div>GitHub: /PinkLittleKitty</div>
+                    <div>Response Time: < 24h</div>
+                    <div>Availability: High</div>
+                </div>
+                
+                <div style="border: 1px solid #00ff00; padding: 15px; background: rgba(0, 255, 0, 0.05);">
+                    <h3 style="margin-top: 0; color: #00ff00;">TECH STACK</h3>
+                    <div>Frontend: React</div>
+                    <div>Backend: Node.js, C#, Javascript, .Net/WPF</div>
+                    <div>Database: MySQL, MongoDB</div>
+                    <div>Cloud: Docker</div>
+                    <div>Tools: Git, VS Code, Unity</div>
+                </div>
+            </div>
+            
+            <div style="
+                text-align: center;
+                margin-top: 20px;
+                padding: 15px;
+                border: 1px solid #00ff00;
+                background: rgba(0, 255, 0, 0.1);
+            ">
+                <div style="margin-bottom: 10px;">
+                    🎉 CONGRATULATIONS! You found the secret developer console!
+                </div>
+                <div style="margin-bottom: 15px;">
+                    This shows the kind of attention to detail I bring to every project.
+                </div>
+                <button onclick="document.getElementById('retro-overlay').remove()" style="
+                    background: #00ff00;
+                    color: #000;
+                    border: none;
+                    padding: 10px 20px;
+                    font-family: 'Courier New', monospace;
+                    font-weight: bold;
+                    cursor: pointer;
+                    margin: 0 10px;
+                ">EXIT SYSTEM</button>
+                <button onclick="location.href='mailto:contacto@justneki.com'" style="
+                    background: transparent;
+                    color: #00ff00;
+                    border: 1px solid #00ff00;
+                    padding: 10px 20px;
+                    font-family: 'Courier New', monospace;
+                    cursor: pointer;
+                    margin: 0 10px;
+                ">HIRE DEVELOPER</button>
+            </div>
+        </div>
+    `;
+
+    const cursor = document.createElement('span');
+    cursor.textContent = '_';
+    cursor.style.animation = 'blink 1s infinite';
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
