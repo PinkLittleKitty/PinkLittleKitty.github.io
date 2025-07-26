@@ -2,150 +2,198 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MLKE6RX1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-K8MLKE6RX1');
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MLKE6RX1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-K8MLKE6RX1');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santiago Fisela | Linkbush</title>
-    <!-- Favicon -->
-    <link rel="icon" href="https://avatars.githubusercontent.com/PinkLittleKitty" type="image/x-icon" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Core theme CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago Fisela | Developer & Student</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
-        integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ=="
-        crossorigin="anonymous"></script>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Santiago Fisela - Student and indie developer. Currently looking for exciting opportunities in software development.">
+  <meta name="keywords"
+    content="Santiago Fisela, developer, student, indie developer, web development, game development">
+  <meta name="author" content="Santiago Fisela">
 
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const userLang = navigator.language || navigator.userLanguage;
-            const lang = userLang.startsWith('es') ? 'es' : 'en';
-        
-            fetch(`translations/${lang}.json`)
-              .then(response => response.json())
-              .then(data => {
-                console.log('Data received:', data);
-        
-                document.getElementById('writingTextLink').src = data.writingTextLink || '';
-                document.getElementById('codeSection').textContent = data.codeSection || '';
-                document.getElementById('contactSection').textContent = data.contactSection || '';
-                document.getElementById('socialSection').textContent = data.socialSection || '';
-                document.getElementById('githubUsername').textContent = data.githubUsername || '';
-                document.getElementById('sketchfabUsername').textContent = data.sketchfabUsername || '';
-                document.getElementById('portafolioUsername').textContent = data.portafolioUsername || '';
-                document.getElementById('twitchUsername').textContent = data.twitchUsername || '';
-                document.getElementById('discordUsername').textContent = data.discordUsername || '';
-                document.getElementById('youtubeUsername').textContent = data.youtubeUsername || '';
-                document.getElementById('linkedinUsername').textContent = data.linkedinUsername || '';
-              })
-              .catch(error => {
-                console.error('Error fetching or parsing translations:', error);
-              });
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pinklittlekitty.github.io/">
+  <meta property="og:title" content="Santiago Fisela | Developer & Student">
+  <meta property="og:description"
+    content="Student and indie developer currently looking for exciting opportunities in software development.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/PinkLittleKitty">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://pinklittlekitty.github.io/">
+  <meta property="twitter:title" content="Santiago Fisela | Developer & Student">
+  <meta property="twitter:description"
+    content="Student and indie developer currently looking for exciting opportunities in software development.">
+  <meta property="twitter:image" content="https://avatars.githubusercontent.com/PinkLittleKitty">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://avatars.githubusercontent.com/PinkLittleKitty" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/PinkLittleKitty">
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Main styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
+    integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ=="
+    crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const userLang = navigator.language || navigator.userLanguage;
+      const lang = userLang.startsWith('es') ? 'es' : 'en';
+
+      fetch(`translations/${lang}.json`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Data received:', data);
+
+          const writingImg = document.getElementById('writingTextLink');
+          if (writingImg && data.writingTextLink) {
+            writingImg.style.opacity = '0';
+            writingImg.src = data.writingTextLink;
+            writingImg.onload = () => {
+              writingImg.style.transition = 'opacity 0.5s ease';
+              writingImg.style.opacity = '1';
+            };
+          }
+
+          const updates = [
+            ['codeSection', data.codeSection],
+            ['contactSection', data.contactSection],
+            ['socialSection', data.socialSection],
+            ['webProjectsText', data.webProjectsText],
+            ['githubUsername', data.githubUsername],
+            ['sketchfabUsername', data.sketchfabUsername],
+            ['portafolioUsername', data.portafolioUsername],
+            ['twitchUsername', data.twitchUsername],
+            ['discordUsername', data.discordUsername],
+            ['youtubeUsername', data.youtubeUsername],
+            ['linkedinUsername', data.linkedinUsername]
+          ];
+
+          updates.forEach(([id, text]) => {
+            const element = document.getElementById(id);
+            if (element && text) {
+              element.textContent = text;
+            }
           });
-        </script>
-        
-  </head>
+        })
+        .catch(error => {
+          console.error('Error fetching or parsing translations:', error);
+        });
+    });
+  </script>
 
-  <body class="hideScroll">
-    <!-- Animación de fondo parallax -->
-    <canvas id="asteroidsCanvas"></canvas>
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- Fin de la animación de fondo parallax -->
+</head>
 
-    <section class="type-pong" id="pongGame" onclick="startPongGame()">
-      <div class="score">
-        <span id="playerScore">0</span>
-        <span id="aiScore">0</span>
-      </div>
-      <div class="racket left" id="playerPaddle"></div>
-      <div class="racket right" id="aiPaddle"></div>
-      <div class="ball" id="pongBall">JustNeki</div>
-      <div class="divider"></div>
-      <a id="profilePicture" href="#popup">
-        <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
-      </a>
+<body class="hideScroll">
+  <canvas id="asteroidsCanvas"></canvas>
+  <section class="animated-background">
+    <div id="stars1"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
   </section>
 
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="https://avatars.githubusercontent.com/PinkLittleKitty" target="_blank">
-            <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
-          </a>
-        </div>
-        <div class="popup-quote">
-          Comedy = Tragedy + Time.
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
-      </div>
+  <section class="type-pong" id="pongGame">
+    <div class="score">
+      <span id="playerScore">0</span>
+      <span id="aiScore">0</span>
     </div>
+    <div class="racket left" id="playerPaddle"></div>
+    <div class="racket right" id="aiPaddle"></div>
+    <div class="ball" id="pongBall">JustNeki</div>
+    <div class="divider"></div>
+    <a id="profilePicture" href="#popup" aria-label="View profile details">
+      <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Santiago Fisela's profile picture">
+    </a>
+  </section>
 
-    <img class="writingText" id="writingTextLink" />
-    
-    <section class="links">
-      <h3 id="codeSection">
-        <hr />
-      </h3>
-      <a href="https://github.com/PinkLittleKitty" target="_blank">
-        <div class="icon"><i class="fab fa-github"></i></div>
-        Github
-        <span class="u-name" id="githubUsername"></span>
-      </a>
-       <a href="https://sketchfab.com/JustNeki" target="_blank">
-        <div class="icon"><i class="fa fa-cube"></i></div>
-        Sketchfab
-        <span class="u-name" id="sketchfabUsername"></span>
-      </a>
-      <a href="https://justneki.com/WebProjects">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Proyectos Web
-        <span class="u-name">HTML/HTML5/Javascript/CSS</span>
-      </a>
-      <a href="https://blog.farteam.digital/" target="_blank">
-        <div class="icon"><i class="fab fa-wordpress"></i></div>
-        Farm Game Dev
-        <span class="u-name">@F.A.R Team</span>
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.FaRTeam.RoomMakers" target="_blank">
-        <div class="icon"><i class="fab fa-google-play"></i></div>
-        Room Makers
-        <span class="u-name">@F.A.R Team</span>
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.FaRTeam.KTA&hl=es" target="_blank">
-        <div class="icon"><i class="fab fa-google-play"></i></div>
-        KTA
-        <span class="u-name">@F.A.R Team</span>
-      </a>
-      <h3 id="contactSection">
-        <hr />
-      </h3>
-      <a href="https://www.linkedin.com/in/santiago-fisela/" target="_blank">
-        <div class="icon"><i class="fa fa-linkedin"></i></div>
-        LinkedIn
-        <span class="u-name" id="linkedinUsername"></span>
-      </a>
-      <a class="link curriculum"
-      href="https://justneki.com/resume/" target="_blank">
+  <div class="overlay" id="popup" role="dialog" aria-labelledby="popup-title" aria-hidden="true">
+    <div class="popup">
+      <div class="popup-photo">
+        <a href="https://avatars.githubusercontent.com/PinkLittleKitty" target="_blank"
+          aria-label="View full size profile picture">
+          <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Santiago Fisela's profile picture">
+        </a>
+      </div>
+      <div class="popup-quote">
+        <h3 id="popup-title" style="display: none;">Profile Quote</h3>
+        "Comedy = Tragedy + Time."
+      </div>
+      <a class="popup-close" onclick="closePopup()" aria-label="Close popup">&times;</a>
+    </div>
+  </div>
+
+  <img class="writingText" id="writingTextLink" style="opacity: 0; transition: opacity 0.5s ease;"
+    alt="Animated introduction text" />
+
+  <section class="links">
+    <h3 id="codeSection">
+      <hr />
+    </h3>
+    <a href="https://github.com/PinkLittleKitty" target="_blank">
+      <div class="icon"><i class="fab fa-github"></i></div>
+      Github
+      <span class="u-name" id="githubUsername"></span>
+    </a>
+    <a href="https://sketchfab.com/JustNeki" target="_blank">
+      <div class="icon"><i class="fa fa-cube"></i></div>
+      Sketchfab
+      <span class="u-name" id="sketchfabUsername"></span>
+    </a>
+    <a href="https://justneki.com/WebProjects">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      <span id="webProjectsText">Web Projects</span>
+      <span class="u-name">HTML/HTML5/Javascript/CSS</span>
+    </a>
+    <a href="https://blog.farteam.digital/" target="_blank">
+      <div class="icon"><i class="fab fa-wordpress"></i></div>
+      Farm Game Dev
+      <span class="u-name">@F.A.R Team</span>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.FaRTeam.RoomMakers" target="_blank">
+      <div class="icon"><i class="fab fa-google-play"></i></div>
+      Room Makers
+      <span class="u-name">@F.A.R Team</span>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.FaRTeam.KTA&hl=es" target="_blank">
+      <div class="icon"><i class="fab fa-google-play"></i></div>
+      KTA
+      <span class="u-name">@F.A.R Team</span>
+    </a>
+    <h3 id="contactSection">
+      <hr />
+    </h3>
+    <a href="https://www.linkedin.com/in/santiago-fisela/" target="_blank">
+      <div class="icon"><i class="fa fa-linkedin"></i></div>
+      LinkedIn
+      <span class="u-name" id="linkedinUsername"></span>
+    </a>
+    <a class="link curriculum" href="https://justneki.com/resume/" target="_blank">
       <div class="icon"><i class="fa fa-file">&nbsp;</i></div>
       Currículum Vitae
       <span class="u-name">Santiago Fisela</span>
-      <a onclick="copyToClipboard('contacto@justneki.com', 'email', 'fa fa-envelope', ' E-mail')" 
-      id="email">
+      <a onclick="copyToClipboard('contacto@justneki.com', 'email', 'fa fa-envelope', ' E-mail')" id="email">
         <div class="icon"><i class="fa fa-envelope"></i></div>
         E-mail
         <span class="u-name">contacto@justneki.com</span>
@@ -158,27 +206,91 @@
         Twitch
         <span class="u-name" id="twitchUsername"></span>
       </a>
-      <a class="link discord" onclick="copyToClipboard('JustNeki#0172', 'discord', 'fab fa-discord', ' JustNeki#0172')" id="discord" onmouseenter="onMouseEnter()" onmouseleave="onMouseExit()">
-      <div class="icon"><i class="fab fa-discord"></i></div>
-      Discord
-      <span class="u-name" id="discordUsername"></span>
+      <a class="link discord" onclick="copyToClipboard('JustNeki#0172', 'discord', 'fab fa-discord', ' JustNeki#0172')"
+        id="discord">
+        <div class="icon"><i class="fab fa-discord"></i></div>
+        Discord
+        <span class="u-name" id="discordUsername"></span>
       </a>
       <a href="https://www.youtube.com/@justneki" target="_blank">
         <div class="icon"><i class="fab fa-youtube"></i></div>
         YouTube
         <span class="u-name" id="youtubeUsername"></span>
       </a>
-    </section>
-    
-    <script  src="linksScripts.js"></script>
-    <script src="pong.js"></script>
-    <script src="asteroids.js"></script>
-  </body>
-  <footer>
-  <p class="footerText">© Santiago Fisela <span id="footerYear">2025</span></p>
+  </section>
+
+  <script src="scripts.js"></script>
+  <script src="linksScripts.js"></script>
+  <script src="pong.js"></script>
+  <script src="asteroids.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const popup = document.getElementById('popup');
+      const profilePicture = document.getElementById('profilePicture');
+
+      profilePicture.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        window.location.hash = '#popup';
+        popup.setAttribute('aria-hidden', 'false');
+        
+        setTimeout(() => {
+          const closeButton = popup.querySelector('.popup-close');
+          if (closeButton) closeButton.focus();
+        }, 100);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && window.location.hash === '#popup') {
+          history.back();
+          popup.setAttribute('aria-hidden', 'true');
+          profilePicture.focus();
+        }
+      });
+
+      window.addEventListener('hashchange', function () {
+        if (window.location.hash !== '#popup') {
+          popup.setAttribute('aria-hidden', 'true');
+        }
+      });
+      
+      window.closePopup = function() {
+        window.location.hash = '';
+        popup.setAttribute('aria-hidden', 'true');
+        profilePicture.focus();
+      };
+      
+      setTimeout(() => {
+        const pongGame = document.getElementById('pongGame');
+        if (pongGame) {
+          pongGame.addEventListener('click', function(e) {
+            if (!profilePicture.contains(e.target) && e.target !== profilePicture) {
+              if (typeof window.startPongGame === 'function') {
+                window.startPongGame();
+              }
+            }
+          });
+        }
+      }, 100);
+
+      document.documentElement.style.scrollBehavior = 'smooth';
+
+      const writingImg = document.getElementById('writingTextLink');
+      if (writingImg && !writingImg.src) {
+        writingImg.style.minHeight = '100px';
+      }
+    });
+  </script>
+</body>
+<footer>
+  <p class="footerText">
+    © <span id="footerYear">2025</span> Santiago Fisela.
+  </p>
   <script>
     document.getElementById('footerYear').textContent = new Date().getFullYear();
   </script>
-
 </footer>
+
 </html>

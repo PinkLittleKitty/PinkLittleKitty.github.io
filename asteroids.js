@@ -209,18 +209,17 @@ function initAsteroids() {
     ctx.imageSmoothingEnabled = false;
     
     function resizeCanvas() {
-        const dpr = window.devicePixelRatio || 1;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2); // Cap DPR for performance
         
-        // Full viewport height without any margins
-        const height = document.documentElement.clientHeight;
-        // Calculate width based on aspect ratio while maintaining height
-        const width = Math.min(document.documentElement.clientWidth, height * (16/9));
+        // Full viewport dimensions
+        const width = window.innerWidth;
+        const height = window.innerHeight;
         
         // Set canvas size in pixels
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         
-        // Set display size
+        // Set display size to cover full viewport
         canvas.style.width = `${width}px`;
         canvas.style.height = `${height}px`;
         
@@ -229,13 +228,14 @@ function initAsteroids() {
         ctx.imageSmoothingEnabled = false;
     }
     
-    // Add CSS to center the canvas
-    canvas.style.display = 'block';
-    canvas.style.margin = 'auto';
-    canvas.style.position = 'absolute';
-    canvas.style.top = '50%';
-    canvas.style.left = '50%';
-    canvas.style.transform = 'translate(-50%, -50%)';
+    // Position canvas to cover full page
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '-1';
+    canvas.style.pointerEvents = 'none';
     
     // Initial resize
     resizeCanvas();

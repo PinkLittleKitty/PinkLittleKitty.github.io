@@ -19,22 +19,25 @@ function stopPongAnimation() {
     const rackets = document.querySelectorAll('.racket');
     rackets.forEach(racket => racket.style.animation = 'none');
 }
-  function startPongGame() {
+
+window.startPongGame = function startPongGame() {
       if (game.running) return;
       stopPongAnimation();
     
       const profilePic = document.getElementById('profilePicture').querySelector('img');
       const justneki = document.getElementById('pongBall');
     
-      // Animate profile picture
-      profilePic.style.transition = 'all 0.5s ease-in-out';
-      profilePic.style.width = '30px';
-      profilePic.style.height = '30px';
+      // Animate profile picture shrinking
+      const profilePicContainer = document.getElementById('profilePicture');
+      profilePicContainer.style.transition = 'all 0.5s ease-in-out';
+      profilePicContainer.style.width = '30px';
+      profilePicContainer.style.height = '30px';
+      profilePicContainer.style.transform = 'translate(-50%, -50%) scale(0.3)';
       justneki.style.display = 'none';
     
       // Start game after animation
       setTimeout(() => {
-        profilePic.style.display = 'none';
+        profilePicContainer.style.display = 'none';
           game.running = true;
         
           const gameArea = document.getElementById('pongGame');
@@ -155,7 +158,42 @@ function stopPongAnimation() {
 
           gameLoop();
       }, 500);
-  }function updateScore() {
+}
+
+function updateScore() {
     document.getElementById('playerScore').textContent = game.playerScore;
     document.getElementById('aiScore').textContent = game.aiScore;
 }
+
+// Function to reset the profile picture to its original state
+function resetProfilePicture() {
+    const profilePicContainer = document.getElementById('profilePicture');
+    if (profilePicContainer) {
+        profilePicContainer.style.display = 'block';
+        profilePicContainer.style.transition = 'all 0.5s ease-in-out';
+        profilePicContainer.style.width = '96px';
+        profilePicContainer.style.height = '96px';
+        profilePicContainer.style.transform = 'translate(-50%, -50%)';
+        
+        // Reset the game state
+        game.running = false;
+        
+        // Remove the game ball if it exists
+        const gameBall = document.querySelector('#pongGame #pongBall');
+        if (gameBall && gameBall.parentNode) {
+            gameBall.parentNode.removeChild(gameBall);
+        }
+    }
+}
+
+// Add double-click to reset the game
+document.addEventListener('DOMContentLoaded', function() {
+    const pongGame = document.getElementById('pongGame');
+    if (pongGame) {
+        pongGame.addEventListener('dblclick', function(e) {
+            if (game.running) {
+                resetProfilePicture();
+            }
+        });
+    }
+});

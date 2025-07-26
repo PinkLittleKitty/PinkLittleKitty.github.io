@@ -1,340 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MLKE6RX1"></script>
-    <script>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MLKE6RX1"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-K8MLKE6RX1');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santiago Fisela | Proyectos Web</title>
-    <!-- Favicon -->
-    <link rel="icon" href="https://avatars.githubusercontent.com/PinkLittleKitty" type="image/x-icon" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Core theme CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
+  </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ==" crossorigin="anonymous"></script>
-    <style>
-      .collapsible-trigger {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        padding: 10px; 
-        border: 5px white solid;
-        background: linear-gradient(to right, white 50%, transparent 50%);
-        background-size: 200% 101%;
-        background-position: right top;
-        transition-property: color, background-position, filter;
-        transition-duration: .25s;
-        transition-timing-function: ease-in-out;
-        box-sizing: border-box;
-        color: white;
-        border-radius: 0;
-        margin-bottom: 10px;
-        position: relative;
-        justify-content: center;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago Fisela | Web Projects</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Explore Santiago Fisela's web development projects including tools, games, and applications built with modern web technologies.">
+  <meta name="keywords" content="Santiago Fisela, web projects, JavaScript, HTML, CSS, web development, tools, games">
+  <meta name="author" content="Santiago Fisela">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pinklittlekitty.github.io/WebProjects.html">
+  <meta property="og:title" content="Santiago Fisela | Web Projects">
+  <meta property="og:description"
+    content="Explore my web development projects including tools, games, and applications.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/PinkLittleKitty">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://pinklittlekitty.github.io/WebProjects.html">
+  <meta property="twitter:title" content="Santiago Fisela | Web Projects">
+  <meta property="twitter:description"
+    content="Explore my web development projects including tools, games, and applications.">
+  <meta property="twitter:image" content="https://avatars.githubusercontent.com/PinkLittleKitty">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://avatars.githubusercontent.com/PinkLittleKitty" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/PinkLittleKitty">
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Main styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
+    integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ=="
+    crossorigin="anonymous"></script>
+  <style>
+    .collapsible-trigger {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 50px;
+      max-height: 60px;
+      padding: var(--space-md) var(--space-lg);
+      border: 2px solid var(--border-color);
+      background: var(--secondary-bg);
+      border-radius: var(--border-radius);
+      transition: all var(--transition-fast);
+      box-sizing: border-box;
+      color: var(--primary-text);
+      margin-bottom: var(--space-sm);
+      position: relative;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .collapsible-trigger:hover {
+      background: var(--hover-bg);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .logo-container.far-logo {
+      width: 150px;
+      height: 40px;
+      background-image: url('assets/far-logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+      filter: brightness(1.1);
+      transition: var(--transition-fast);
+    }
+
+    .collapsible-trigger:hover .section-logo {
+      filter: brightness(1.3);
+    }
+
+    .collapsible-trigger .trigger-text {
+      margin-right: var(--space-sm);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .collapsible-trigger .icon-toggle {
+      margin-left: auto;
+      margin-right: var(--space-sm);
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      font-size: 1em;
+      position: absolute;
+      right: var(--space-md);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-color);
+    }
+
+    .collapsible-trigger .icon-toggle .fas {
+      transition: transform var(--transition-normal);
+    }
+
+    .collapsible-trigger[aria-expanded="true"] .icon-toggle .fas {
+      transform: rotate(180deg);
+    }
+
+    .collapsible-trigger hr {
+      flex-grow: 1;
+      min-width: 10px;
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 0 var(--space-sm);
+    }
+
+    .collapsible-content {
+      display: none;
+      padding: var(--space-sm) 0;
+      margin-left: var(--space-lg);
+      border-left: 2px solid var(--border-color);
+      padding-left: var(--space-lg);
+      animation: slideDown 0.3s ease-out;
+    }
+
+    .collapsible-content.open {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
       }
 
-      .collapsible-trigger .section-logo {
-        height: 2em;
-        max-width: 500px;
-        flex-shrink: 0;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .collapsible-trigger .trigger-text {
-        margin-right: 0.5em;
-        white-space: nowrap;
-      }
+    .collapsible-content>a {
+      display: flex;
+      align-items: center;
+      padding: var(--space-md) var(--space-lg);
+      background: var(--secondary-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      color: var(--primary-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      margin-bottom: var(--space-sm);
+      position: relative;
+      overflow: hidden;
+    }
 
-      .collapsible-trigger .icon-toggle {
-        margin-left: auto;
-        margin-right: 0.5em;
-        flex-shrink: 0;
-        display: inline-flex;
-        align-items: center;
-        font-size: 1em;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-left: 0;
-        margin-right: 0;
-      }
+    .collapsible-content>a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+      transition: var(--transition-normal);
+    }
 
-      .collapsible-trigger .icon-toggle .fas {
-        transition: transform 0.2s ease-out;
-      }
+    .collapsible-content>a:hover::before {
+      left: 100%;
+    }
 
-      .collapsible-trigger[aria-expanded="true"] .icon-toggle .fas {
-        transform: rotate(180deg);
-      }
+    .collapsible-content>a:hover {
+      background: var(--hover-bg);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
 
-      .collapsible-trigger hr {
-        flex-grow: 1;
-        min-width: 10px;
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
-        margin: 0 0.5em;
-      }
+    .collapsible-content>a:last-child {
+      margin-bottom: 0;
+    }
 
-      .collapsible-content {
-        display: none;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        padding-left: 1.5em;
-      }
-      .collapsible-content.open {
-        display: block;
-      }
-      .collapsible-content > a {
-        display: block;
-        padding: 12px 15px;
-        padding: 10px;
-        border: 5px white solid;
-        background: linear-gradient(to right, white 50%, transparent 50%); 
-        background-size: 200% 101%;
-        background-position: right top;
-        transition-property: color, background-position, filter;
-        transition-duration: .25s;
-        transition-timing-function: ease-in-out;
-        box-sizing: border-box;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 0;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-      }
-      .collapsible-content > a:hover {
-        background-position: left top;
-        color: black !important;
-        filter: drop-shadow(0px 0px 5px black);
-      }
+    .collapsible-content>a .icon {
+      width: 24px;
+      height: 24px;
+      margin-right: var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color);
+    }
 
-      .collapsible-content > a:last-child {
-        margin-bottom: 0; 
-      }
-      .collapsible-content > a .icon {
-        display: inline;
-        float: left;
-        margin-right: 10px;
-      }
-      .collapsible-content > a .icon i {
-        font-weight: normal;
-      }
-      .collapsible-content > a .u-name {
-        visibility: hidden;
-        display: none;
-        opacity: 50%;
-      }
-      .collapsible-content > a:hover .u-name {
-        display: initial;
-        visibility: visible;
-      }
+    .collapsible-content>a .icon i {
+      font-size: 1.2rem;
+    }
 
-      .collapsible-section {
-        max-width: 400px;
-        width: 100%;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
+    .collapsible-content>a .u-name {
+      margin-left: auto;
+      font-size: 0.85rem;
+      color: var(--secondary-text);
+      font-family: var(--font-mono);
+      opacity: 0;
+      transform: translateX(10px);
+      transition: var(--transition-fast);
+    }
 
-  <body class="hideScroll">
-    <!-- Animación de fondo parallax -->
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- Fin de la animación de fondo parallax -->
+    .collapsible-content>a:hover .u-name {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
-    <section class="type-pong">
-        <div class="racket left"></div>
-        <div class="racket right"></div>
-        <div class="ball">JustNeki</div>
-        <div class="divider"></div>
-        <a id="profilePicture" href="#popup">
-          <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
-        </a>
+    .collapsible-section {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Professional page header */
+    .page-header {
+      text-align: center;
+      margin: var(--space-2xl) 0;
+    }
+
+    .page-header h1 {
+      color: var(--accent-color);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    .page-header p {
+      color: var(--secondary-text);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body class="hideScroll">
+  <canvas id="asteroidsCanvas"></canvas>
+  <section class="animated-background">
+    <div id="stars1"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
   </section>
 
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="https://avatars.githubusercontent.com/PinkLittleKitty" target="_blank">
-            <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
-          </a>
-        </div>
-        <div class="popup-quote">
-          Comedy = Tragedy + Time.
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
+  <section class="type-pong">
+    <div class="racket left"></div>
+    <div class="racket right"></div>
+    <div class="ball">JustNeki</div>
+    <div class="divider"></div>
+    <a id="profilePicture" href="#popup">
+      <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
+    </a>
+  </section>
+
+  <div class="overlay" id="popup">
+    <div class="popup">
+      <div class="popup-photo">
+        <a href="https://avatars.githubusercontent.com/PinkLittleKitty" target="_blank">
+          <img src="https://avatars.githubusercontent.com/PinkLittleKitty" alt="Profile Picture">
+        </a>
+      </div>
+      <div class="popup-quote">
+        Comedy = Tragedy + Time.
+      </div>
+      <a class="popup-close" onclick="history.back()">&times;</a>
+    </div>
+  </div>
+  <img class="writingText"
+    src="https://readme-typing-svg.herokuapp.com?color=8B5CF6&center=true&vCenter=true&width=600&height=100&lines=Oh%2C+hola.;%C2%BFTe+interesan+mis+proyectos+web%3F;Porfi%2C+prob%C3%A1+todo+lo+que+quieras.;+Si+cambiar%C3%ADas+algo%2C+hac%C3%A9+una+issue+o+pull+request+en+Github.;O++si+solo+quer%C3%A9s+ver+el+c%C3%B3digo%2C+entr%C3%A1+a+mi+Github"
+    alt="Typing SVG" />
+
+  <section class="links">
+    <h3>// Herramientas
+    </h3>
+    <a href="https://justneki.com/EnglishClasses" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Clases de Inglés
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://justneki.com/tablas-de-verdad" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Generador de Tablas de Verdad
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://justneki.com/QGrid" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      IDE y Interpreter para QDraw.
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://github.com/PinkLittleKitty/ConvertidorExtension/releases" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Extensión de Chrome de mi Convertidor y Calculadora.
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://justneki.com/convertidor" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Convertidor y Calculadora Binario, Hexa, y Decimal.
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://justneki.com/conjuntos" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Teoría de Conjuntos.
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://justneki.com/QRGen" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Generador de QR
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://justneki.com/WPI" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Windows Post (Pirata) Install
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <h3>// Juegos
+    </h3>
+    <a href="https://justneki.com/snake-pvp" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Snake PvP
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <a href="https://justneki.com/asteroids" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Asteroids
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+    <!-- F.a.R Team Collapsible Section -->
+    <div class="collapsible-section">
+      <h3 class="collapsible-trigger" aria-expanded="false" aria-controls="far-team-links-content">
+        <div class="logo-container far-logo"></div>
+        <span class="icon-toggle"><i class="fas fa-chevron-down"></i></span>
+      </h3>
+      <div id="far-team-links-content" class="collapsible-content">
+        <a href="https://farteam.digital/" target="_blank">
+          <div class="icon"><i class="fa fa-code"></i></div>
+          F.a.R Team's Website
+          <span class="u-name">@PinkLittleKitty</span>
+        </a>
+        <a href="https://blog.farteam.digital/" target="_blank">
+          <div class="icon"><i class="fa fa-code"></i></div>
+          Devlog
+          <span class="u-name">@PinkLittleKitty</span>
+        </a>
+        <a href="https://farteam.digital/devtools" target="_blank">
+          <div class="icon"><i class="fa fa-code"></i></div>
+          Devtools (Internal)
+          <span class="u-name">@PinkLittleKitty</span>
+        </a>
+        <a href="https://farteam.digital/FarmoxelBuilds" target="_blank">
+          <div class="icon"><i class="fa fa-code"></i></div>
+          Farmoxel Builds (Internal)
+          <span class="u-name">@PinkLittleKitty</span>
+        </a>
+        <a href="https://farteam.digital/bug-report/" target="_blank">
+          <div class="icon"><i class="fa fa-code"></i></div>
+          Bug Report
+          <span class="u-name">@PinkLittleKitty</span>
+        </a>
+        <a href="https://farteam.digital/connect" target="_blank">
+          <div class="icon"><i class="fa fa-code"></i></div>
+          Connect with us!
+          <span class="u-name">@PinkLittleKitty</span>
+        </a>
       </div>
     </div>
+    <!-- End F.a.R Team Collapsible Section -->
+    <h3>// Misc
+    </h3>
+    <a href="https://justneki.com/pokedex" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Pokédex
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
 
-    <img class="writingText" src="https://readme-typing-svg.herokuapp.com?color=FFFFFF&center=true&vCenter=true&width=600&height=100&lines=Oh%2C+hola.;%C2%BFTe+interesan+mis+proyectos+web%3F;Porfi%2C+prob%C3%A1+todo+lo+que+quieras.;+Si+cambiar%C3%ADas+algo%2C+hac%C3%A9+una+issue+o+pull+request+en+Github.;O++si+solo+quer%C3%A9s+ver+el+c%C3%B3digo%2C+entr%C3%A1+a+mi+Github" alt="Typing SVG"/>
-    
-    <section class="links">
-      <h3>//&nbsp;Herramientas
-        <hr />
-      </h3>
-      <a href="https://justneki.com/EnglishClasses" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Clases de Inglés
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <a href="https://justneki.com/tablas-de-verdad" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Generador de Tablas de Verdad
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <a href="https://justneki.com/QGrid" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        IDE y Interpreter para QDraw.
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <a href="https://github.com/PinkLittleKitty/ConvertidorExtension/releases" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Extensión de Chrome de mi Convertidor y Calculadora.
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <a href="https://justneki.com/convertidor" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Convertidor y Calculadora Binario, Hexa, y Decimal.
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <a href="https://justneki.com/conjuntos" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Teoría de Conjuntos.
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <a href="https://justneki.com/QRGen" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Generador de QR
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-       <a href="https://justneki.com/WPI" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Windows Post (Pirata) Install
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-    <h3>//&nbsp;Juegos
-        <hr />
-      </h3>
-      <a href="https://justneki.com/snake-pvp" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Snake PvP
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <a href="https://justneki.com/asteroids" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Asteroids
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      <!-- F.a.R Team Collapsible Section -->
-      <div class="collapsible-section">
-        <h3 class="collapsible-trigger" aria-expanded="false" aria-controls="far-team-links-content">
-          <img src="assets/far-logo.png" alt="F.a.R Team Logo" class="section-logo">
-          <span class="icon-toggle"><i class="fas fa-chevron-down"></i></span>
-        </h3>
-        <div id="far-team-links-content" class="collapsible-content">
-          <a href="https://farteam.digital/" target="_blank">
-            <div class="icon"><i class="fa fa-code"></i></div>
-            F.a.R Team's Website
-            <span class="u-name">@PinkLittleKitty</span>
-          </a>
-          <a href="https://blog.farteam.digital/" target="_blank">
-            <div class="icon"><i class="fa fa-code"></i></div>
-            Devlog
-            <span class="u-name">@PinkLittleKitty</span>
-          </a>
-          <a href="https://farteam.digital/devtools" target="_blank">
-            <div class="icon"><i class="fa fa-code"></i></div>
-            Devtools (Internal)
-            <span class="u-name">@PinkLittleKitty</span>
-          </a>
-          <a href="https://farteam.digital/FarmoxelBuilds" target="_blank">
-            <div class="icon"><i class="fa fa-code"></i></div>
-            Farmoxel Builds (Internal)
-            <span class="u-name">@PinkLittleKitty</span>
-          </a>
-          <a href="https://farteam.digital/bug-report/" target="_blank">
-            <div class="icon"><i class="fa fa-code"></i></div>
-            Bug Report
-            <span class="u-name">@PinkLittleKitty</span>
-          </a>
-          <a href="https://farteam.digital/connect" target="_blank">
-            <div class="icon"><i class="fa fa-code"></i></div>
-            Connect with us!
-            <span class="u-name">@PinkLittleKitty</span>
-          </a>
-        </div>
-      </div>
-      <!-- End F.a.R Team Collapsible Section -->
-    <h3>//&nbsp;Misc
-        <hr />
-      </h3>
-      <a href="https://justneki.com/pokedex" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Pokédex
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-      
-      <a href="https://justneki.com/apertureScienceCMD" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        ApertureScience.com
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
+    <a href="https://justneki.com/apertureScienceCMD" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      ApertureScience.com
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
 
-      <a href="https://justneki.com/winkeygen" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        Keygen 95
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
+    <a href="https://justneki.com/winkeygen" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      Keygen 95
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
 
-      <a href="https://justneki.com/32BitClock" target="_blank">
-        <div class="icon"><i class="fa fa-code"></i></div>
-        32-Bit Clock
-        <span class="u-name">@PinkLittleKitty</span>
-      </a>
-    </section>
-    
-    <script  src="linksScripts.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const farTeamTrigger = document.querySelector('.collapsible-trigger[aria-controls="far-team-links-content"]');
-        
-        if (farTeamTrigger) {
-          const contentToToggle = document.getElementById(farTeamTrigger.getAttribute('aria-controls'));
+    <a href="https://justneki.com/32BitClock" target="_blank">
+      <div class="icon"><i class="fa fa-code"></i></div>
+      32-Bit Clock
+      <span class="u-name">@PinkLittleKitty</span>
+    </a>
+  </section>
 
-          if (contentToToggle) {
-            farTeamTrigger.addEventListener('click', () => {
-              const isExpanded = farTeamTrigger.getAttribute('aria-expanded') === 'true' || false;
-              farTeamTrigger.setAttribute('aria-expanded', !isExpanded);
-              contentToToggle.classList.toggle('open');
-            });
-          }
+  <script src="scripts.js"></script>
+  <script src="linksScripts.js"></script>
+  <script src="asteroids.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const farTeamTrigger = document.querySelector('.collapsible-trigger[aria-controls="far-team-links-content"]');
+
+      if (farTeamTrigger) {
+        const contentToToggle = document.getElementById(farTeamTrigger.getAttribute('aria-controls'));
+
+        if (contentToToggle) {
+          farTeamTrigger.addEventListener('click', () => {
+            const isExpanded = farTeamTrigger.getAttribute('aria-expanded') === 'true' || false;
+            farTeamTrigger.setAttribute('aria-expanded', !isExpanded);
+            contentToToggle.classList.toggle('open');
+          });
         }
-      });
-    </script>
-  </body>
-  <footer>
-  <p class="footerText">© Santiago Fisela <span id="footerYear">2025</span></p>
+      }
+    });
+  </script>
+</body>
+<footer>
+  <p class="footerText">
+    © <span id="footerYear">2025</span> Santiago Fisela.
+  </p>
   <script>
     document.getElementById('footerYear').textContent = new Date().getFullYear();
   </script>
-
 </footer>
+
 </html>
